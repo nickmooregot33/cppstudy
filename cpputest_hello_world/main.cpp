@@ -1,5 +1,6 @@
-#include "hello_world"
+#include "hello_world.h"
 
 int main (int argument_count, char** arguments){
-	moops::hello_world.main(argument_count, arguments);
+	moops::hello_world hello;
+	return hello.main(argument_count, arguments);
 }
