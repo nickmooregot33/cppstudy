@@ -1,4 +1,4 @@
-#include "hello.h"
+#include "hello_world.h"
 
 std::string moops::hello_world::speak() { return std::string("Hello world");}
 std::string moops::hello_world::speak(string name) { return std::string("Hello ") + name};
