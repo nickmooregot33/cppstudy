@@ -1,3 +1,5 @@
+#include "hello_world.h"
+#include <cassert>
 #include "CppUTest/TestHarness.h"
 #include "CppUTest/CommandLineTestRunner.h"
 
@@ -9,9 +11,12 @@ TEST_GROUP(hello_world)
 
 TEST(hello_world,should_greet_by_name)
 {
-	expected_value = std::string{"Hello Nick!"};
+	expected_value = std::string{"Hello Nick!\n"};
 	moops::hello_world hello;
-	assert hello.speak("Nick") == expected_value;
+	test_result = hello.speak(std::string{"Nick"});
+			std::cout << test_result;
+			std::cout << expected_value;
+		assert(test_result == expected_value);
 }
 
 

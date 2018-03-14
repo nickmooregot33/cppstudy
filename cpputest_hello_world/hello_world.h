@@ -4,23 +4,21 @@
 #include <string>
 
 namespace moops {
+	class basic_writer {
+	public:
+		basic_writer(){}
+		void write(std::string s) {std::cout << s << '\n';}
+	};
 	class hello_world {
 	public:
-		hello_world(): twriter{new basic_writer{}}{};
+		hello_world(): twriter{new moops::basic_writer{} }{};
 		std::string speak();
 		std::string speak(std::string name);
 		void write();
 		int main(int argc, char** argv);
 		~hello_world(){ delete twriter;}
 	private:
-		basic_writer& twriter;
-	};
-	class basic_writer {
-	public:
-		basic_writer(){}
-		void write(std::string s) {std::cout << s << '\n';}
+		moops::basic_writer* twriter;
 	};
 };
-
 #endif
-
